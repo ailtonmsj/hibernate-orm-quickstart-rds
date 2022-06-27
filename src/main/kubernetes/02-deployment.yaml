@@ -1,33 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: useradd
-  namespace: teste
+  name: rds-teste
+  namespace: imoveis
   labels:
-    app: useradd
+    app: rds-teste
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: useradd
+      app: rds-teste
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        app: useradd
+        app: rds-teste
     spec:
       containers:
-      - image: ailtonmsj/useradd-jvm:1.0.0
-        name: useradd-jvm
+      - image: ailtonmsj/amazon-rds-quickstart:1.0.0
+        name: rds
         imagePullPolicy: Always
         resources: {}
         env:
         - name: QUEUE_URL
           value:
-        - name: AWS_ACCESS_KEY_ID
-          value:
-        - name: AWS_SECRET_ACCESS_KEY
-          value:
-        - name:
-          value:
+      serviceAccount: serviceaccount-imoveis
