@@ -10,7 +10,6 @@ spec:
   selector:
     matchLabels:
       app: rds-teste
-  strategy: {}
   template:
     metadata:
       labels:
@@ -22,6 +21,10 @@ spec:
         imagePullPolicy: Always
         resources: {}
         env:
-        - name: QUEUE_URL
+        - name: DB_USERNAME
           value:
+        - name: DB_PASSWORD
+          value:
+        - name: DB_URL
+          value: 
       serviceAccount: serviceaccount-imoveis

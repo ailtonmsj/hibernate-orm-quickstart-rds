@@ -24,10 +24,6 @@ import org.jboss.resteasy.annotations.jaxrs.PathParam;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import software.amazon.awssdk.auth.credentials.WebIdentityTokenFileCredentialsProvider;
-import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.rds.RdsUtilities;
-
 @Path("fruits")
 @ApplicationScoped
 @Produces("application/json")
