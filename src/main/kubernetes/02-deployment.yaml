@@ -16,15 +16,14 @@ spec:
         app: rds-teste
     spec:
       containers:
-      - image: ailtonmsj/amazon-rds-quickstart:1.0.0
+      - image: ailtonmsj/amazon-rds-quickstart:1.0.2
         name: rds
         imagePullPolicy: Always
         resources: {}
         env:
         - name: DB_USERNAME
-          value:
+          value: "<USERNAME>"
         - name: DB_PASSWORD
-          value:
+          value: "<PASSWORD>"
         - name: DB_URL
-          value: 
-      serviceAccount: serviceaccount-imoveis
+          value: "jdbc:mysql:aws//<DB_WRITER>:<PORT>/<DATABASE>"
